@@ -9,8 +9,8 @@
 ░       ▒ ▒ ░░    ░░   ░  ░  ░░ ░  ░   ▒    ░ ░  ░    ░   ░  ░  ░  
 Bienvenue sur le serveur SSH de Cyrhades
 
-Utilisez netcat pour accéder au challenge sur le serveur *****:~$ nc sous-marin.cyrhades.fr:4000!
+Utilisez netcat pour accéder au challenge sur le serveur *****:~$ nc sous-marin.cyrhades.fr 4000!
 
-*****:~$ nc sous-marin.cyrhades.fr:4000
+*****:~$ nc sous-marin.cyrhades.fr 4000
 
 Bonne chance !

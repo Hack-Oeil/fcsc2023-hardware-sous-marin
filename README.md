@@ -34,12 +34,12 @@ Origine : [Sous marin](https://hackropole.fr/fr/challenges/hardware/fcsc2023-har
 > http://localhost
 
 #### tentez 
-> nc sous-marin.cyrhades.fr:4000
+> nc sous-marin.cyrhades.fr 4000
 
 -----------
 
 ## Ou directement avec netcat
-> nc localhost:4000
+> nc localhost 4000
 
 
 -----------
