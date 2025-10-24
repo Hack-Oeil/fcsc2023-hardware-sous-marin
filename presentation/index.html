@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./assets/css/github.min.css">
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #376</h3>
+                            <h2 class="section-title">Sous marin</h2>
+                            <p>Vous êtes invité par un collègue à venir tester son nouveau modèle miniature de
+                                sous-marin. Ce modèle est équipé d’une caméra « vue à la première personne » et d’un
+                                système adéquat pour diffuser ce flux vidéo.
+                                <br /><br />
+                                Pour vous appâter, votre collègue précise que sa carte embarquée est basée sur
+                                <strong>un cœur
+                                    Risc-V</strong>. Vous acceptez donc immédiatement. Le soir venu, vous passez
+                                plusieurs minutes
+                                à explorer les fonds marins du bassin du campus. Néanmoins, au bout d’une demi-heure, le
+                                système de supervision panique et vous perdez la communication. Vous vous jetez dans le
+                                bassin pour récupérer le modèle. Votre collègue voit au loin des étudiants partir en
+                                courant avec du matériel radio en main. Mais que s’est-il passé ? Est-ce que ces
+                                étudiants auraient compromis le système du sous-marin à distance ? Vous proposez d’aider
+                                votre collègue à extraire le contenu de sa mémoire Flash et à l’analyser.
+                                <br /><br />
+                                Le lendemain, après une douche et une courte nuit de repos, votre collègue dépose la
+                                carte électronique du sous-marin sur votre bureau. Il vous confirme qu’il a implémenté
+                                <a target="_blank"
+                                    href="https://en.wikipedia.org/wiki/Serial_port#Conventional_notation">un port série
+                                    en mode 8-N-1</a>, mais il précise qu’il a potentiellement fait <strong>une
+                                    erreur
+                                    d’implémentation dans la logique du port série synthétisé</strong>, mais il ne s’en
+                                souvient
+                                plus trop.
+                                <br /><br />
+                                Parce que le sous-marin n’est pas sous l’eau, son électronique n’est pas correctement
+                                refroidie. Vous ne pouvez pas le garder allumé plus que quelques minutes avant qu’il ne
+                                s’éteigne par sécurité.
+                                <br /><br />
+                                Vous prenez un adaptateur port série vers USB pour vous connecter sur le système et vous
+                                commencez à investiguer…
+                                <br /><br />
+                                <strong>Pour s’interfacer avec le port série à distance, vous aurez besoin de
+                                    Telnet.</strong>
+                                <br /><br />
+                                Votre collègue a réussi à retrouver une sauvegarde du chargeur de démarrage
+                                <code>bootloader.bin</code> et vous indique que vous pouvez émuler la séquence de
+                                démarrage avec la
+                                commande <code>qemu-system-riscv64 -M sifive_u -m 45M -kernel bootloader.bin</code>
+                                (port série
+                                disponible dans <code>View > Serial 0</code>). Cela vous permet de prototyper des idées
+                                avant de
+                                risquer d’abîmer le sous-marin.
+                                <br /><br />
+                                <strong>Il faut QEMU 5.1 ou ultérieur pour pouvoir émuler ce challenge.</strong>
+                            </p>
+                            <h4>Fichier à étudier</h4>
+                            <p>
+                                - bootloader.bin
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2023</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Lien officiel :
+                                <a target="_blank"
+                                    href="https://hackropole.fr/fr/challenges/hardware/fcsc2023-hardware-sous-marin/">FCSC
+                                    2023 -
+                                    Sous marin
+                                </a>
+                                <br />
+                                Auteur: erdnaxe
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprentissage</h3>
+                            <h2 class="section-title">Documentations et Vidéos</h2>
+                            <p class="section-subtitle">
+                                Aucune documentation pour le moment
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aide</h3>
+                            <h2 class="section-title">Conseils et indices</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Fil sur
+                                    le Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Remonter en haut de la page" title="Remonter en tête de site"></a>
+    </div>
+</body>
+
+</html>

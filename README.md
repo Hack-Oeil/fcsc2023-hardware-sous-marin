@@ -17,7 +17,7 @@ Votre collègue a réussi à retrouver une sauvegarde du chargeur de démarrage 
 **Il faut QEMU 5.1 ou ultérieur pour pouvoir émuler ce challenge.**
 
 
-Fichiers:
+Fichier:
 - [bootloader.bin](bootloader.bin)
 
 
